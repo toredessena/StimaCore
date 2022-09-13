@@ -87,7 +87,12 @@ extension Item {
         valoreDiPosizione + valoreCertThermo + totSismaConv + totBarrier
     }
     
-   
+    public func assegnazione() -> String {
+        if totBarrier == 0.00 {
+            return "strac"
+        }
+         return "nulla"
+    }
 
     
     public var stringa: String {
@@ -125,7 +130,7 @@ extension Item {
     In particolare:
     - certificazione sismica: l'immobile risulta/non risulta certificato per la classe: _
     - certificazione sull'abbattimento delle barriere architettoniche: l'immobile risulta/non risulta certificato per la classe: _
-    - certificazione energetica: l'immobile risulta/non risulta certificato per la classe: _
+    - certificazione energetica: l'immobile risulta/non risulta certificato per la classe: \(assegnazione())
     
     Il Valore di stima finale per l'immobile oggetto di stima, pertanto, è fissato in Euro \(valoreFinale.rounded()).
     
