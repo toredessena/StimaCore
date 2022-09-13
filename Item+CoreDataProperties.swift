@@ -87,6 +87,7 @@ extension Item {
         valoreDiPosizione + valoreCertThermo + totSismaConv + totBarrier
     }
     
+   
 
     
     public var stringa: String {
