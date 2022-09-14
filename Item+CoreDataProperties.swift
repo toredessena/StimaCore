@@ -89,7 +89,13 @@ extension Item {
     
     public func assegnazione() -> String {
         if totBarrier == 0.00 {
-            return "strac"
+            return "L'immobile non risulta certificato"
+        } else if totBarrier == 0.05 {
+            return "L'immobile risulta certificato per il requisito dell'adattabilità ai sensi del DPR 236/96"
+        } else if totBarrier == 0.10 {
+            return "L'immobile risulta certificato per il requisito della visitabilità ai sensi del DPR 236/96"
+        } else if totBarrier == 0.15 {
+            return "L'immobile risulta certificato per il requisito dell'accessibilità ai sensi del DPR 236/96"
         }
          return "nulla"
     }
