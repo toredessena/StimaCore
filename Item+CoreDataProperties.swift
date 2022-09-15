@@ -121,6 +121,32 @@ extension Item {
         
          return "L'immobile non risulta certificabile"
     }
+    
+    public func assegnazioneEnergetica() -> String {
+        if valoreCertThermo == -0.40 {
+            return "L'immobile risulta certificato per la Classe Energetica G"
+        } else if valoreCertThermo == -0.30 {
+            return "L'immobile risulta certificato per la Classe Energetica F"
+        } else if valoreCertThermo == -0.20 {
+            return "L'immobile risulta certificato per la Classe Energetica E"
+        } else if valoreCertThermo == -0.10 {
+            return "L'immobile risulta certificato per la Classe Energetica D"
+        } else if valoreCertThermo == -0.10 {
+            return "L'immobile risulta certificato per la Classe Energetica C"
+        } else if valoreCertThermo == 0.00 {
+            return "L'immobile risulta certificato per la Classe Energetica B"
+        } else if valoreCertThermo == 0.10 {
+            return "L'immobile risulta certificato per la Classe Energetica A1"
+        } else if valoreCertThermo == 0.20 {
+            return "L'immobile risulta certificato per la Classe Energetica A2"
+        } else if valoreCertThermo == 0.30 {
+            return "L'immobile risulta certificato per la Classe Energetica A3"
+        } else if valoreCertThermo == 0.40 {
+            return "L'immobile risulta certificato per la Classe Energetica A4"
+        }
+        
+         return "L'immobile non risulta certificabile"
+    }
 
     
     public var stringa: String {
@@ -157,8 +183,8 @@ extension Item {
     Il valore dell'immobile varia infine in ragione delle certificazioni possedute dallo stesso così da comporre il valore finale
     In particolare:
     - certificazione sismica: \(assegnazioneSismica())
-    - certificazione sull'abbattimento delle barriere architettoniche: l'immobile risulta/non risulta certificato per la classe: _
-    - certificazione energetica: \(assegnazioneBarriere())
+    - certificazione sull'abbattimento delle barriere architettoniche: \(assegnazioneBarriere())
+    - certificazione energetica: \(assegnazioneEnergetica())
     
     Il Valore di stima finale per l'immobile oggetto di stima, pertanto, è fissato in Euro \(valoreFinale.rounded()).
     
