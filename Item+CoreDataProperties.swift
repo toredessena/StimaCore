@@ -87,7 +87,7 @@ extension Item {
         valoreDiPosizione + valoreCertThermo + totSismaConv + totBarrier
     }
     
-    public func assegnazione() -> String {
+    public func assegnazioneBarriere() -> String {
         if totBarrier == 0.00 {
             return "L'immobile non risulta certificato"
         } else if totBarrier == 0.05 {
@@ -97,7 +97,29 @@ extension Item {
         } else if totBarrier == 0.15 {
             return "L'immobile risulta certificato per il requisito dell'accessibilità ai sensi del DPR 236/96"
         }
-         return "nulla"
+         return "L'immobile non risulta certificabile"
+    }
+    
+    public func assegnazioneSismica() -> String {
+        if totSismaConv == 0.00 {
+            return "L'immobile risulta certificato per la Classe Sismica G"
+        } else if totSismaConv == 0.05 {
+            return "L'immobile risulta certificato per la Classe Sismica F"
+        } else if totSismaConv == 0.10 {
+            return "L'immobile risulta certificato per la Classe Sismica E"
+        } else if totSismaConv == 0.15 {
+            return "L'immobile risulta certificato per la Classe Sismica D"
+        } else if totSismaConv == 0.20 {
+            return "L'immobile risulta certificato per la Classe Sismica C"
+        } else if totSismaConv == 0.25 {
+            return "L'immobile risulta certificato per la Classe Sismica B"
+        } else if totSismaConv == 0.30 {
+            return "L'immobile risulta certificato per la Classe Sismica A"
+        } else if totSismaConv == 0.35 {
+            return "L'immobile risulta certificato per la Classe Sismica A+"
+        }
+        
+         return "L'immobile non risulta certificabile"
     }
 
     
@@ -134,9 +156,9 @@ extension Item {
     Certificazioni.
     Il valore dell'immobile varia infine in ragione delle certificazioni possedute dallo stesso così da comporre il valore finale
     In particolare:
-    - certificazione sismica: l'immobile risulta/non risulta certificato per la classe: _
+    - certificazione sismica: \(assegnazioneSismica())
     - certificazione sull'abbattimento delle barriere architettoniche: l'immobile risulta/non risulta certificato per la classe: _
-    - certificazione energetica: \(assegnazione())
+    - certificazione energetica: \(assegnazioneBarriere())
     
     Il Valore di stima finale per l'immobile oggetto di stima, pertanto, è fissato in Euro \(valoreFinale.rounded()).
     
