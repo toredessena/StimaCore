@@ -147,6 +147,23 @@ extension Item {
         
          return "L'immobile non risulta certificabile"
     }
+    
+    public func assegnaValoreMuri() -> String {
+        if structValue == -0.20 {
+         return   "Il livello di qualità dell'involucro murario risulta scarso"
+        } else if structValue == -0.10 {
+            return "Il livello di qualità dell'involucro murario risulta mediocre"
+        } else if structValue == 0.00 {
+            return "Il livello di qualità dell'involucro murario risulta ordinario"
+        } else if structValue == 0.10 {
+            return "Il livello di qualità dell'involucro murario risulta discreto"
+        } else if structValue == 0.20 {
+            return "Il livello di qualità dell'involucro murario risulta buono"
+        }
+    return "nulla"
+    }
+
+    
 
     
     public var stringa: String {
@@ -173,6 +190,7 @@ extension Item {
     
     Valore di Conservazione.
     Sul valore di partenza é stato quindi possibile operare il calcolo atto a stabilire il cosiddetto Valore di Conservazione, ossia la variazione del valore immobiliare derivante dalla qualità dei componenti edilizi in ragione della rispettiva incidenza percentuale.
+    Qualità delle murature: \(assegnaValoreMuri())
     Per l'immobile considerato il valore di conservazione VC corrisponde a Euro \(valoreDiConservazione.rounded())
     
     Valore di Posizione.
