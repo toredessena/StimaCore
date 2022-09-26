@@ -210,15 +210,30 @@ extension Item {
     
     public func assegnaValoreImpianti() -> String {
         if installationsValue == -0.20 {
-         return   "Il livello di qualità di intonaci e rivestimenti risulta scarso"
+         return   "Il livello di qualità di impianti e canalizzazioni risulta scarso"
         } else if installationsValue == -0.10 {
-            return "Il livello di qualità di intonaci e rivestimenti risulta mediocre"
+            return "Il livello di qualità di impianti e canalizzazioni risulta mediocre"
         } else if installationsValue == 0.00 {
-            return "Il livello di qualità di intonaci e rivestimenti risulta ordinario"
+            return "Il livello di qualità di impianti e canalizzazioni risulta ordinario"
         } else if installationsValue == 0.10 {
-            return "Il livello di qualità di intonaci e rivestimenti risulta discreto"
+            return "Il livello di qualità di impianti e canalizzazioni risulta discreto"
         } else if installationsValue == 0.20 {
-            return "Il livello di qualità di intonaci e rivestimenti risulta buono"
+            return "Il livello di qualità di impianti e canalizzazioni risulta buono"
+        }
+    return "nulla"
+    }
+    
+    public func assegnaValorePavimenti() -> String {
+        if floorsValue == -0.20 {
+         return   "Il livello di qualità di pavimenti e rivestimenti ceramici risulta scarso"
+        } else if floorsValue == -0.10 {
+            return "Il livello di qualità di pavimenti e rivestimenti ceramici risulta mediocre"
+        } else if floorsValue == 0.00 {
+            return "Il livello di qualità di pavimenti e rivestimenti ceramici risulta ordinario"
+        } else if floorsValue == 0.10 {
+            return "Il livello di qualità di pavimenti e rivestimenti ceramici risulta discreto"
+        } else if floorsValue == 0.20 {
+            return "Il livello di qualità di pavimenti e rivestimenti ceramici risulta buono"
         }
     return "nulla"
     }
@@ -256,7 +271,7 @@ extension Item {
     Qualità degli infissi: \(assegnaValoreInfissi())
     Qualità di intonaci e tinteggiature: \(assegnaValoreIntonaci())
     Qualità degli impianti: \(assegnaValoreImpianti())
-    Qualità di pavimenti e rivestimenti:
+    Qualità di pavimenti e rivestimenti: \(assegnaValorePavimenti())
     
     Per l'immobile considerato il valore di conservazione VC corrisponde a Euro \(valoreDiConservazione.rounded())
     
