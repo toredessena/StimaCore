@@ -255,7 +255,7 @@ extension Item {
     - Superficie non residenziale: mq. \(snr),
     - Piani interrati o seminterrati: mq. \(cellar),
     - Corti, logge e spazi aperti: mq.\(plot),
-    per una superficie ragguagliata ai fini del calcolo pari a mq. \(supRagg).
+    per una superficie ragguagliata ai fini del calcolo pari a mq. \(supRagg.rounded()).
     
     Operazioni di stima.
     
