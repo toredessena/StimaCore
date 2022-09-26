@@ -184,11 +184,26 @@ extension Item {
         } else if windowsValue == -0.10 {
             return "Il livello di qualità di infissi e chiusure risulta mediocre"
         } else if windowsValue == 0.00 {
-            return "Il livello di qualità di di infissi e chiusure risulta ordinario"
+            return "Il livello di qualità di infissi e chiusure risulta ordinario"
         } else if windowsValue == 0.10 {
-            return "Il livello di qualità di di infissi e chiusure risulta discreto"
+            return "Il livello di qualità di infissi e chiusure risulta discreto"
         } else if windowsValue == 0.20 {
-            return "Il livello di qualità di di infissi e chiusure risulta buono"
+            return "Il livello di qualità di infissi e chiusure risulta buono"
+        }
+    return "nulla"
+    }
+    
+    public func assegnaValoreIntonaci() -> String {
+        if plastersValue == -0.20 {
+         return   "Il livello di qualità di intonaci e rivestimenti risulta scarso"
+        } else if plastersValue == -0.10 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta mediocre"
+        } else if plastersValue == 0.00 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta ordinario"
+        } else if plastersValue == 0.10 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta discreto"
+        } else if plastersValue == 0.20 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta buono"
         }
     return "nulla"
     }
@@ -224,7 +239,7 @@ extension Item {
     Qualità delle murature: \(assegnaValoreMuri())
     Qualità dei solai: \(assegnaValoreSolai())
     Qualità degli infissi: \(assegnaValoreInfissi())
-    Qualità di intonaci e tinteggiature:
+    Qualità di intonaci e tinteggiature: \(assegnaValoreIntonaci())
     Qualità degli impianti:
     Qualità di pavimenti e rivestimenti:
     
