@@ -162,6 +162,36 @@ extension Item {
         }
     return "nulla"
     }
+    
+    public func assegnaValoreSolai() -> String {
+        if roofValue == -0.20 {
+         return   "Il livello di qualità di solai e orizzontamenti risulta scarso"
+        } else if roofValue == -0.10 {
+            return "Il livello di qualità di solai e orizzontamenti risulta mediocre"
+        } else if roofValue == 0.00 {
+            return "Il livello di qualità di solai e orizzontamenti risulta ordinario"
+        } else if roofValue == 0.10 {
+            return "Il livello di qualità di solai e orizzontamenti risulta discreto"
+        } else if roofValue == 0.20 {
+            return "Il livello di qualità di solai e orizzontamenti risulta buono"
+        }
+    return "nulla"
+    }
+    
+    public func assegnaValoreInfissi() -> String {
+        if windowsValue == -0.20 {
+         return   "Il livello di qualità di infissi e chiusure risulta scarso"
+        } else if windowsValue == -0.10 {
+            return "Il livello di qualità di infissi e chiusure risulta mediocre"
+        } else if windowsValue == 0.00 {
+            return "Il livello di qualità di di infissi e chiusure risulta ordinario"
+        } else if windowsValue == 0.10 {
+            return "Il livello di qualità di di infissi e chiusure risulta discreto"
+        } else if windowsValue == 0.20 {
+            return "Il livello di qualità di di infissi e chiusure risulta buono"
+        }
+    return "nulla"
+    }
 
     
 
@@ -190,7 +220,14 @@ extension Item {
     
     Valore di Conservazione.
     Sul valore di partenza é stato quindi possibile operare il calcolo atto a stabilire il cosiddetto Valore di Conservazione, ossia la variazione del valore immobiliare derivante dalla qualità dei componenti edilizi in ragione della rispettiva incidenza percentuale.
+    
     Qualità delle murature: \(assegnaValoreMuri())
+    Qualità dei solai:
+    Qualità degli infissi:
+    Qualità di intonaci e tinteggiature:
+    Qualità degli impianti:
+    Qualità di pavimenti e rivestimenti:
+    
     Per l'immobile considerato il valore di conservazione VC corrisponde a Euro \(valoreDiConservazione.rounded())
     
     Valore di Posizione.
