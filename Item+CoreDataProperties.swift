@@ -222,8 +222,8 @@ extension Item {
     Sul valore di partenza é stato quindi possibile operare il calcolo atto a stabilire il cosiddetto Valore di Conservazione, ossia la variazione del valore immobiliare derivante dalla qualità dei componenti edilizi in ragione della rispettiva incidenza percentuale.
     
     Qualità delle murature: \(assegnaValoreMuri())
-    Qualità dei solai:
-    Qualità degli infissi:
+    Qualità dei solai: \(assegnaValoreSolai())
+    Qualità degli infissi: \(assegnaValoreInfissi())
     Qualità di intonaci e tinteggiature:
     Qualità degli impianti:
     Qualità di pavimenti e rivestimenti:
