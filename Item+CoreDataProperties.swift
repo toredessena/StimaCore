@@ -207,6 +207,21 @@ extension Item {
         }
     return "nulla"
     }
+    
+    public func assegnaValoreImpianti() -> String {
+        if installationsValue == -0.20 {
+         return   "Il livello di qualità di intonaci e rivestimenti risulta scarso"
+        } else if installationsValue == -0.10 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta mediocre"
+        } else if installationsValue == 0.00 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta ordinario"
+        } else if installationsValue == 0.10 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta discreto"
+        } else if installationsValue == 0.20 {
+            return "Il livello di qualità di intonaci e rivestimenti risulta buono"
+        }
+    return "nulla"
+    }
 
     
 
@@ -240,7 +255,7 @@ extension Item {
     Qualità dei solai: \(assegnaValoreSolai())
     Qualità degli infissi: \(assegnaValoreInfissi())
     Qualità di intonaci e tinteggiature: \(assegnaValoreIntonaci())
-    Qualità degli impianti:
+    Qualità degli impianti: \(assegnaValoreImpianti())
     Qualità di pavimenti e rivestimenti:
     
     Per l'immobile considerato il valore di conservazione VC corrisponde a Euro \(valoreDiConservazione.rounded())
