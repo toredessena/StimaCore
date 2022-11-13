@@ -52,25 +52,7 @@ struct ContentView: View {
                 // MARK: - MAIN VIEW
                 VStack {
                     
-                    
-                    // MARK: - NEW TASK BUTTON
-                    Button(action: {
-                        showNewTaskItem = true
-                        playSound(sound: "sound-tap", type: "mp3")
-                    }, label: {
-                        Image(systemName: "plus.circle")
-                            .font(.system(size: 30, weight: .light))
-                        
-                    })
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 10)
-                        .background(Color("ColorPinkBright"))
-                        .clipShape(Capsule())
-                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
-                    
-                        .padding(.bottom, 10)
-                    
+          
                     // MARK: - LIST OF ITEMS
                     List {
                         ForEach(items) { item in
@@ -89,6 +71,30 @@ struct ContentView: View {
                     .frame(maxWidth: 640)
                 } //: VSTACK
                 
+                // MARK: - NEW TASK BUTTON
+                .overlay(
+                    VStack{
+                        Button(action: {
+                            showNewTaskItem = true
+                            playSound(sound: "sound-tap", type: "mp3")
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 30, weight: .light))
+                            
+                        })
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 10)
+                            .background(Color("ColorPinkBright"))
+                            .clipShape(Capsule())
+                            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
+                        
+                            .padding(.bottom, 10)
+                    }
+                        .padding(.top, 520)
+                )
+               
+                
                 // MARK: - NEW TASK ITEM
                 if showNewTaskItem {
                     BlankView()
@@ -103,11 +109,6 @@ struct ContentView: View {
             .onAppear() {
                 UITableView.appearance().backgroundColor = UIColor.clear
             }
-            .navigationBarItems(trailing:  HStack {
-              
-                // APPEARANCE BUTTON
-               
-            })
             .searchable(text: $searchText)
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -128,15 +129,16 @@ struct ContentView: View {
                             .resizable()
                             .frame(width: 26, height: 26)
                             .font(.system(.title))
-                    })
-                }
-               
+                        })
+                    }
+                
                 })
             .navigationBarTitle("StimaCore", displayMode: .large)
            
         } //: NAVIGATION
         .accentColor(Color("ColorPinkBright"))
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
+        
     }
 }
 
