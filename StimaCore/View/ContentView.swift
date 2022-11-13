@@ -104,26 +104,35 @@ struct ContentView: View {
                 UITableView.appearance().backgroundColor = UIColor.clear
             }
             .navigationBarItems(trailing:  HStack {
-                EditButton()
-                    .font(.system(size: 16, weight: .semibold))
-                    .padding(.horizontal, 20)
-                    .frame(minWidth: 64, minHeight: 24)
-                    .background(
-                        Capsule().stroke(Color("ColorPinkBright"), lineWidth: 2.0)
-                )
+              
                 // APPEARANCE BUTTON
-                Button(action: {
-                    //TOGGLE Appearance
-                    isDarkMode.toggle()
-                }, label: {
-                    Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .font(.system(.title))
-                })
+               
             })
             .searchable(text: $searchText)
-            .navigationBarTitle("StimaCore")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                        .font(.system(size: 14, weight: .regular))
+                        .padding(.horizontal, 10)
+                        .frame(minWidth: 40, minHeight: 20)
+                        .background(
+                            Capsule().stroke(Color("ColorPinkBright"), lineWidth: 1.4)
+                        )
+                    }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        //TOGGLE Appearance
+                        isDarkMode.toggle()
+                    }, label: {
+                        Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                            .resizable()
+                            .frame(width: 26, height: 26)
+                            .font(.system(.title))
+                    })
+                }
+               
+                })
+            .navigationBarTitle("StimaCore", displayMode: .large)
            
         } //: NAVIGATION
         .accentColor(Color("ColorPinkBright"))
