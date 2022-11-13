@@ -3,7 +3,7 @@
 //  StimaCore
 //
 //  Created by salvatore dessena on 19/02/22.
-//
+// version 1.2
 
 import SwiftUI
 

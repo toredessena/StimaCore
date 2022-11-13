@@ -18,6 +18,7 @@ struct ContentView: View {
     @State var nome: String = ""
    
     @State private var showNewTaskItem: Bool = false
+    @State private var searchText = ""
     
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
@@ -51,40 +52,6 @@ struct ContentView: View {
                 // MARK: - MAIN VIEW
                 VStack {
                     
-                    // MARK: - HEADER
-                    HStack(spacing: 10) {
-                        //TITLE
-                        Text("StimaCore")
-                            .font(.system(.largeTitle))
-                            .fontWeight(.heavy)
-                            .padding(.leading, 4)
-                        
-                        Spacer()
-                        
-                        //EDIT BUTTON
-                        EditButton()
-                            .font(.system(size: 16, weight: .semibold))
-                            .padding(.horizontal, 10)
-                            .frame(minWidth: 64, minHeight: 24)
-                            .background(
-                                Capsule().stroke(Color("ColorPinkBright"), lineWidth: 2.0)
-                            )
-
-                        // APPEARANCE BUTTON
-                        Button(action: {
-                            //TOGGLE Appearance
-                            isDarkMode.toggle()
-                        }, label: {
-                            Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .font(.system(.title))
-                        })
-                    }//: HSTACK
-                    .padding()
-                    .foregroundColor(Color("ColorPinkBright"))
-                    Spacer(minLength: 30)
-                    //:     END OF HEADER
                     
                     // MARK: - NEW TASK BUTTON
                     Button(action: {
@@ -102,6 +69,7 @@ struct ContentView: View {
                         .clipShape(Capsule())
                         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
                     
+                        .padding(.bottom, 10)
                     
                     // MARK: - LIST OF ITEMS
                     List {
@@ -114,6 +82,7 @@ struct ContentView: View {
                         }
                         .onDelete(perform: deleteItems)
                     } //: END OF LIST OF ITEMS
+                    
                     .listStyle(InsetGroupedListStyle())
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.08), radius: 14)
                     .padding(.vertical, 0)
@@ -134,9 +103,27 @@ struct ContentView: View {
             .onAppear() {
                 UITableView.appearance().backgroundColor = UIColor.clear
             }
-            .navigationBarTitle("StimaCore", displayMode: .large)
-            .navigationBarHidden(true)
-            
+            .navigationBarItems(trailing:  HStack {
+                EditButton()
+                    .font(.system(size: 16, weight: .semibold))
+                    .padding(.horizontal, 20)
+                    .frame(minWidth: 64, minHeight: 24)
+                    .background(
+                        Capsule().stroke(Color("ColorPinkBright"), lineWidth: 2.0)
+                )
+                // APPEARANCE BUTTON
+                Button(action: {
+                    //TOGGLE Appearance
+                    isDarkMode.toggle()
+                }, label: {
+                    Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .font(.system(.title))
+                })
+            })
+            .navigationBarTitle("StimaCore")
+           
         } //: NAVIGATION
         .accentColor(Color("ColorPinkBright"))
         .navigationViewStyle(StackNavigationViewStyle())
