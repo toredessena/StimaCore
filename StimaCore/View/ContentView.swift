@@ -84,6 +84,7 @@ struct ContentView: View {
                     .padding()
                     .foregroundColor(Color("ColorPinkBright"))
                     Spacer(minLength: 30)
+                    //:     END OF HEADER
                     
                     // MARK: - NEW TASK BUTTON
                     Button(action: {
@@ -102,17 +103,17 @@ struct ContentView: View {
                         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
                     
                     
-                    // MARK: - STIME
+                    // MARK: - LIST OF ITEMS
                     List {
                         ForEach(items) { item in
                             VStack {
                                 NavigationLink(destination: DetailView(item: item)) {
                                     ListRowItemView(item: item)
                                 }
-                            } //: LIST ITEM
+                            }
                         }
                         .onDelete(perform: deleteItems)
-                    } //: LIST
+                    } //: END OF LIST OF ITEMS
                     .listStyle(InsetGroupedListStyle())
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.08), radius: 14)
                     .padding(.vertical, 0)
