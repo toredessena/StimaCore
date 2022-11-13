@@ -122,6 +122,7 @@ struct ContentView: View {
                         .font(.system(.title))
                 })
             })
+            .searchable(text: $searchText)
             .navigationBarTitle("StimaCore")
            
         } //: NAVIGATION
