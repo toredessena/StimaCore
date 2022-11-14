@@ -75,6 +75,19 @@ struct SliderProvaComponentView: View {
                 }
             }
              */
+            HStack {
+                    ruler
+                    Spacer()
+                    ruler
+                    Spacer()
+                    ruler
+                    Spacer()
+                    ruler
+                    Spacer()
+                    ruler
+            }
+            .padding(8)
+            
          
          Slider(value: sliderValueBinding, in: arc, step: istep)
              .accentColor(Color(colorComponent))
@@ -98,54 +111,63 @@ struct SliderProvaComponentView: View {
     var scena: some View {
         HStack {
             if sliderValue == -0.20 {
-                Text("S")
+                Text("Scarso")
+                    .bold()
+                    .foregroundColor(.pink)
             }
                 else {
-                    Text("S")
-                        .foregroundColor(.gray)
+                    Text("")
                 }
             Spacer()
             
             if sliderValue == -0.10 {
-                Text("M")
+                Text("Mediocre")
+                    .bold()
                     .foregroundColor(.pink)
             }
                 else {
-                    Text("med")
-                        .foregroundColor(.gray)
+                    Text("")
                 }
             Spacer()
             
             if sliderValue == 0.00 {
-                Text("O")
+                Text("Ordinario")
+                    .bold()
                     .foregroundColor(.pink)
             }
                 else {
-                    Text("ord")
-                        .foregroundColor(.gray)
+                    Text("")
                 }
             Spacer()
+            
             if sliderValue == 0.10 {
-                Text("D")
+                Text("Discreto")
+                    .bold()
                     .foregroundColor(.pink)
             }
                 else {
-                    Text("dis")
-                        .foregroundColor(.gray)
+                    Text("")
                 }
             Spacer()
+            
             if sliderValue == 0.20 {
-                Text("B")
+                Text("Buono")
+                    .bold()
                     .foregroundColor(.pink)
             }
                 else {
-                    Text("buo")
-                        .foregroundColor(.gray)
+                    Text("")
                 }
             }
         }
     
     // ruler
+    var ruler: some View {
+           Rectangle()
+                .fill(Color(.gray))
+                .frame(width: 1, height: 10)
+    }
+        
     
     }
     
