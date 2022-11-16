@@ -12,174 +12,195 @@ struct SliderProvaComponentView: View {
     
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
-   
     var sliderValueBinding: Binding<Double>
     var arc: ClosedRange<Double>
     var istep: Double
     var sliderValue: Double
     var colorComponent: String
-    var qualityDescriptionText: String
+    
 
     // MARK: - BODY
     
     var body: some View {
-
         VStack {
-            // prova scena
+            // MARK: - INDICATORI QUALITA
             HStack {
-                Text(qualityDescriptionText)
-                    .foregroundColor(Color(colorComponent))
-                Spacer()
                 switch sliderValue {
                 case -0.20:
-                    scena
+                        qualityIndicators
                 case -0.10:
-                    scena
+                        qualityIndicators
                 case 0.00:
-                    scena
+                        qualityIndicators
                 case 0.10:
-                    scena
+                        qualityIndicators
                 case 0.20:
-                    scena
+                        qualityIndicators
                 default:
-                    scena
-             
+                        qualityIndicators
                 }
             }
-            // fine prova scena
-            
-            /*
-            HStack {
-                Text(qualityDescriptionText)
-                    .foregroundColor(Color(colorComponent))
-                Spacer()
-                switch sliderValue {
-                case -0.20:
-                    Text("Scarsa")
-                        .bold()
-                case -0.10:
-                    Text("Mediocre")
-                        .bold()
-                case 0.00:
-                    Text("Ordinaria")
-                        .bold()
-                case 0.10:
-                    Text("Discreta")
-                        .bold()
-                case 0.20:
-                    Text("Buona")
-                        .bold()
-                default:
-                    Text("Discreta")
-                        .bold()
+            // FINE INDICATORI QUALITA
+
+            // MARK: - RIGHELLO E PUNTINI
+                /*
+            HStack(spacing: 80) {
+                    ForEach (1...5, id:\.self) { _ in
+                        cerchietto
+                    }
                 }
-            }
-             */
-           
+                 */
             
-            HStack {
-                    ruler
+                HStack {
                     Spacer()
-                    ruler
-                    Spacer()
-                    ruler
-                    Spacer()
-                    ruler
-                    Spacer()
-                    ruler
-            }
-            .padding(8)
+                        ForEach (1...41, id:\.self) { _ in
+                                   ruler
+                            Spacer()
+                        }
+                }.padding(.horizontal)
             
-         
          Slider(value: sliderValueBinding, in: arc, step: istep)
              .accentColor(Color(colorComponent))
-         
-
+             .padding(.horizontal, 24)
+             
             HStack {
                 Text("Incidenza sul componente")
                     .foregroundColor(Color(colorComponent))
                 Spacer()
-                Text("\(sliderValue * 100, specifier: "%.0f") %")
+                Text("\(sliderValue * 100, specifier: "%.0f")%")
                     .bold()
                     .padding(4)
-                    .padding(.leading, 8)
-                    .padding(.trailing, 8)
                     .background(Capsule(style: .circular).fill(isDarkMode ? Color(colorComponent) : Color.white))
                 }
+            .padding(.horizontal, 24)
+         
             }
-        .padding()
-        }
+       
+    }
     
-    var scena: some View {
+    // MARK: - QUALITY INDICATOR VIEW
+    var qualityIndicators: some View {
         HStack {
             if sliderValue == -0.20 {
-                Text("Scarso")
-                    .bold()
+                VStack {
+                    Text("Scarso")
+                        .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.pink)
-            }
-                else {
-                    Text("")
+                    cerchietto
                 }
+            }
+            else {
+                VStack {
+                    Text("Scarso")
+                        .font(.system(size: 12))
+                    .foregroundColor(Color(.quaternaryLabel))
+                    cerchietto
+                }
+            }
             Spacer()
             
             if sliderValue == -0.10 {
-                Text("Mediocre")
-                    .bold()
+                VStack {
+                    Text("Mediocre")
+                        .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.pink)
+                    cerchietto
+                }
             }
                 else {
-                    Text("")
+                    VStack {
+                        Text("Mediocre")
+                            .font(.system(size: 12))
+                        .foregroundColor(Color(.quaternaryLabel))
+                        cerchietto
+                    }
                 }
             Spacer()
             
             if sliderValue == 0.00 {
-                Text("Ordinario")
-                    .bold()
+                VStack {
+                    Text("Ordinario")
+                        .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.pink)
+                    cerchietto
+                }
             }
                 else {
-                    Text("")
+                    VStack {
+                        Text("Ordinario")
+                            .font(.system(size: 12))
+                        .foregroundColor(Color(.quaternaryLabel))
+                        cerchietto
+                    }
                 }
             Spacer()
             
             if sliderValue == 0.10 {
-                Text("Discreto")
-                    .bold()
+                VStack {
+                    Text("Discreto")
+                        .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.pink)
+                    cerchietto
+                }
             }
                 else {
-                    Text("")
+                    VStack {
+                        Text("Discreto")
+                            .font(.system(size: 12))
+                        .foregroundColor(Color(.quaternaryLabel))
+                        cerchietto
+                    }
                 }
             Spacer()
             
             if sliderValue == 0.20 {
-                Text("Buono")
-                    .bold()
+                VStack {
+                    Text("Buono")
+                        .font(.system(size: 12, weight: .bold))
                     .foregroundColor(.pink)
-            }
-                else {
-                    Text("")
+                    cerchietto
                 }
             }
-        }
-    
-    // ruler
-    var ruler: some View {
-           Rectangle()
-                .fill(Color(.gray))
-                .frame(width: 1, height: 10)
-    }
+                else {
+                    VStack {
+                        Text("Buono")
+                            .font(.system(size: 12))
+                        .foregroundColor(Color(.quaternaryLabel))
+                        cerchietto
+                    }
+                }
+            }
+        .padding(.horizontal, 20)
+        // Finish HSTACK
+        } // Finish Quality Indicator View
         
     
-    }
+    // MARK: - RULER VIEW
+    var ruler: some View {
+        HStack {
+            Rectangle()
+                .fill(Color(.gray))
+                .frame(width: 1, height: 10)
+        }
+        
+    } // Finish ruler view
     
+    // MARK: - CIRCLE VIEW
+    var cerchietto: some View {
+      
+            Image(systemName: "circle.fill")
+                .resizable()
+                .frame(width: 4, height: 4)
+                .foregroundColor(.gray)
+        
+    }
+    // finish circle view
+}
 
 
-
- 
  struct SliderProvaComponentView_Previews: PreviewProvider {
      static var previews: some View {
-         SliderProvaComponentView(sliderValueBinding: .constant(0.10), arc: -0.20...0.20, istep: 0.10, sliderValue: 0.10, colorComponent: "ColorPinkBright", qualityDescriptionText: "")
+         SliderProvaComponentView(sliderValueBinding: .constant(-0.20), arc: -0.20...0.20, istep: 0.10, sliderValue: 0.10, colorComponent: "ColorPinkBright")
      }
  }
  

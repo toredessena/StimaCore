@@ -31,13 +31,26 @@ struct ConservationValueView: View {
                                    , label: {
                                       DismissButtonComponent()
                             })
-
                                 .padding(.bottom, 20)
                             Spacer()
                         } //: VSTACK DISMISS BUTTON
                     )
-            
+    
                 List {
+                    
+                    // MARK: - MURATURE PROVA
+                    Section(header: Text("Murature")) {
+                            SliderProvaComponentView(
+                            
+                            sliderValueBinding: $item.structValue,
+                            arc: -0.20...0.20,
+                            istep: 0.01,
+                            sliderValue: item.structValue,
+                            colorComponent: "ColorPinkBright"
+                           )
+                    }
+                    //: SECTION
+                    
                 // MARK: - MURATURE
                 Section(header: Text("Murature")) {
                         SliderConservationComponent(
@@ -62,6 +75,7 @@ struct ConservationValueView: View {
                     colorComponent: "ColorPinkBright",
                     qualityDescriptionText: "Qualità dei solai")
                     } //: SECTION
+                    
                 // MARK: - INFISSI
                 Section(header: Text("Infissi")) {
                     SliderConservationComponent(
@@ -123,18 +137,16 @@ struct ConservationValueView: View {
                 }
             }
         }
-                .background(Color("ColorGrayLight"))
-        }
+        .background(Color("ColorGrayLight"))
     }
+}
 
 /*
- 
- 
 struct ConservationValueView_Previews: PreviewProvider {
     static var previews: some View {
         ConservationValueView(item: Item())
     }
 }
- 
  */
  
+

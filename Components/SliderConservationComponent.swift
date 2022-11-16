@@ -23,7 +23,7 @@ struct SliderConservationComponent: View {
     // MARK: - BODY
     
     var body: some View {
-        
+     
         VStack {
             HStack {
                 Text(qualityDescriptionText)
@@ -50,6 +50,7 @@ struct SliderConservationComponent: View {
                         .bold()
                 }
             }
+            
             HStack {
                 Text("Incidenza sul componente")
                     .foregroundColor(Color(colorComponent))
@@ -66,16 +67,14 @@ struct SliderConservationComponent: View {
                 .accentColor(Color(colorComponent))
             
         }
-        }
-     
-       
+    }
 }
 
 
  
  struct SliderConservationComponent_Previews: PreviewProvider {
      static var previews: some View {
-         SliderConservationComponent(sliderValueBinding: .constant(0.10), arc: -0.20...0.20, istep: 0.10, sliderValue: 0.10, colorComponent: "ColorPinkBright", qualityDescriptionText: "")
+         SliderConservationComponent(sliderValueBinding: .constant(0.10), arc: -0.20...0.20, istep: 0.10, sliderValue: 0.10, colorComponent: "colorPinkBright", qualityDescriptionText: "cnc")
  .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 
      }
