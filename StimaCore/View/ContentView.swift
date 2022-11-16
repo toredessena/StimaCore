@@ -84,24 +84,27 @@ struct ContentView: View {
                     }//: HSTACK
                     .padding()
                     .foregroundColor(Color("ColorPinkBright"))
-                    Spacer(minLength: 30)
+                    Spacer(minLength: 10)
                     //:     END OF HEADER
                     
                     // MARK: - NEW TASK BUTTON
-                    Button(action: {
-                        showNewTaskItem = true
-                        playSound(sound: "sound-tap", type: "mp3")
-                    }, label: {
-                        Image(systemName: "plus.circle")
-                            .font(.system(size: 30, weight: .light))
-                        
-                    })
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 10)
-                        .background(Color("ColorPinkBright"))
-                        .clipShape(Capsule())
-                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
+                    VStack {
+                        Button(action: {
+                            showNewTaskItem = true
+                            playSound(sound: "sound-tap", type: "mp3")
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 30, weight: .light))
+                            
+                        })
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 10)
+                            .background(Color("ColorPinkBright"))
+                            .clipShape(Capsule())
+                            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
+                    }
+                    .padding(.bottom, 10)
                     
                     
                     // MARK: - LIST OF ITEMS

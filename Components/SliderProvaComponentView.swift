@@ -75,6 +75,8 @@ struct SliderProvaComponentView: View {
                 }
             }
              */
+           
+            
             HStack {
                     ruler
                     Spacer()

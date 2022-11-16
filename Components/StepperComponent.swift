@@ -20,25 +20,40 @@ struct StepperComponent: View {
     var stepperBindingValue: Binding<Double>
     var stepperValue: Double
     
+    // correggo indicature unità di misura
+    var measureIndication: String
+    
     
     var body: some View {
-        Text(surfaceIndication)
-        .lineLimit(1)
-        .foregroundColor(Color(colorSelection))
-        .font(.subheadline)
-        .padding(.top, 10)
-    Stepper(value: stepperBindingValue, in: range, step: step) {
-        Text("Mq. \(stepperValue, specifier: "%.2f")")
-            .bold()
+        
+        VStack {
+            Text(surfaceIndication)
+            .lineLimit(1)
+            .foregroundColor(Color(colorSelection))
+            .font(.subheadline)
+            .padding(.top, 10)
+            
+        Stepper(value: stepperBindingValue, in: range, step: step) {
+            VStack(alignment: .leading) {
+                Text(measureIndication)
+                    .foregroundColor(.gray)
+                
+                Text("\(stepperValue, specifier: "%.2f")")
+                    .foregroundColor(.pink)
+                    .bold()
+            }
+            
+            }
+
         }
     }
 }
 
 
-/*
+
 struct StepperComponent_Previews: PreviewProvider {
     static var previews: some View {
-        StepperComponent()
+        StepperComponent(surfaceIndication: "Intonaci", colorSelection: "ColorPinkBright", range: 0...1000, step: 1.0, stepperBindingValue: .constant(0.00), stepperValue: 0.00, measureIndication: "Mq.")
     }
 }
- */
+

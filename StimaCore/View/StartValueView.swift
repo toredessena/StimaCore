@@ -40,18 +40,18 @@ struct StartValueView: View {
             List {
                 Section(header: Text("Superfici")) {
 
-                    StepperComponent(surfaceIndication: "Superficie residenziale", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.superficie, stepperValue: item.superficie)
+                    StepperComponent(surfaceIndication: "Superficie residenziale", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.superficie, stepperValue: item.superficie, measureIndication: "Mq.")
                     
-                    StepperComponent(surfaceIndication: "Corti, logge, verande e SNR", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.snr, stepperValue: item.snr)
+                    StepperComponent(surfaceIndication: "Corti, logge, verande e SNR", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.snr, stepperValue: item.snr, measureIndication: "Mq.")
                     
-                    StepperComponent(surfaceIndication: "Seminterrati e cantine", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.cellar, stepperValue: item.cellar)
+                    StepperComponent(surfaceIndication: "Seminterrati e cantine", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.cellar, stepperValue: item.cellar, measureIndication: "Mq.")
                     
-                    StepperComponent(surfaceIndication: "Lotto, pertinenze e spazi aperti ", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.plot, stepperValue: item.plot)
+                    StepperComponent(surfaceIndication: "Lotto, pertinenze e spazi aperti ", colorSelection: "ColorPinkBright", range: 0...500, step: 1, stepperBindingValue: $item.plot, stepperValue: item.plot, measureIndication: "Mq.")
                     
             }
                 Section(header: Text("Costo al Mq.")) {
                     
-                    StepperComponent( surfaceIndication: "Valore di mercato per:  \(item.comune ?? "-")", colorSelection: "ColorPinkBright", range: 0...10000, step: 50, stepperBindingValue: $item.costoMq, stepperValue: item.costoMq)
+                    StepperComponent( surfaceIndication: "Valore di mercato per:  \(item.comune ?? "-")", colorSelection: "ColorPinkBright", range: 0...10000, step: 50, stepperBindingValue: $item.costoMq, stepperValue: item.costoMq, measureIndication: "€/mq.")
             }
         }
             .padding(.top, 10)
