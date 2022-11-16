@@ -59,7 +59,8 @@ struct SliderProvaComponentView: View {
                         }
                 }.padding(.horizontal)
             
-         Slider(value: sliderValueBinding, in: arc, step: istep)
+            Slider(value: sliderValueBinding, in: arc, step: istep, onEditingChanged: { _ in  playSound(sound: "sound-tap", type: "mp3")
+            })
              .accentColor(Color(colorComponent))
              .padding(.horizontal, 24)
              

@@ -41,13 +41,13 @@ struct ConservationValueView: View {
                     // MARK: - MURATURE PROVA
                     Section(header: Text("Murature")) {
                             SliderProvaComponentView(
-                            
                             sliderValueBinding: $item.structValue,
                             arc: -0.20...0.20,
                             istep: 0.01,
                             sliderValue: item.structValue,
                             colorComponent: "ColorPinkBright"
                            )
+                       
                     }
                     //: SECTION
                     
