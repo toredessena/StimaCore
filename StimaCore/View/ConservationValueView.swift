@@ -42,8 +42,8 @@ struct ConservationValueView: View {
                     Section(header: Text("Murature")) {
                             SliderProvaComponentView(
                             sliderValueBinding: $item.structValue,
-                            arc: -0.20...0.20,
-                            istep: 0.01,
+                            arc: -0.40...0.40,
+                            istep: 0.10,
                             sliderValue: item.structValue,
                             colorComponent: "ColorPinkBright"
                            )
@@ -52,6 +52,7 @@ struct ConservationValueView: View {
                     //: SECTION
                     
                 // MARK: - MURATURE
+                    /*
                 Section(header: Text("Murature")) {
                         SliderConservationComponent(
                         
@@ -63,6 +64,7 @@ struct ConservationValueView: View {
                         qualityDescriptionText: "Qualità delle murature")
                     
                 } //: SECTION
+                     */
                 
                 // MARK: - SOLAI
                 Section(header: Text("Solai")) {
