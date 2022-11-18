@@ -42,8 +42,8 @@ struct ConservationValueView: View {
                     Section(header: Text("Murature")) {
                             SliderProvaComponentView(
                             sliderValueBinding: $item.structValue,
-                            arc: -0.40...0.40,
-                            istep: 0.10,
+                            arc: -0.50...0.50,
+                            istep: 0.05,
                             sliderValue: item.structValue,
                             colorComponent: "ColorPinkBright"
                            )
