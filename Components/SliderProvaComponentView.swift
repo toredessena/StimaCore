@@ -162,7 +162,7 @@ struct SliderProvaComponentView: View {
 // MARK: - RULER VIEW
 var ruler: some View {
     HStack {
-        ForEach (0...13, id:\.self) { _ in
+        ForEach (0...19, id:\.self) { _ in
                     Rectangle()
                                 .fill(Color(.gray))
                                 .frame(width: 1, height: 10)
@@ -173,6 +173,8 @@ var ruler: some View {
                     .fill(Color(.gray))
                     .frame(width: 1, height: 10)
     }
+    .padding(.leading, 14)
+    .padding(.trailing, 14)
    
             }// END RULER VIEW
 
