@@ -20,50 +20,38 @@ struct SliderProvaComponentView: View {
     
     
     // MARK: - BODY
-    
     var body: some View {
         VStack {
-            // MARK: - Nuovo switch
-           
-            // MARK: - INDICATORI QUALITA
-         
-            qualityIndicators
-            
-            // MARK: - RIGHELLO E PUNTINI
-            
-            HStack {
-                Spacer()
-                ForEach (0...32, id:\.self) { _ in
-                    HStack {
-                        Rectangle()
-                            .fill(Color(.gray))
-                            .frame(width: 1, height: 10)
-                    }
-                    Spacer()
+            VStack {
+                // MARK: - INDICATORI QUALITA
+                HStack {
+                    qualityIndicators
                 }
-            }
-            
-            Slider(value: sliderValueBinding, in: arc, step: istep)
-                .accentColor(Color(colorComponent))
-            
-            /*
-             HStack {
-             Text("Incidenza sul componente")
-             .foregroundColor(Color(colorComponent))
-             Spacer()
-             Text("\(sliderValue * 100, specifier: "%.0f")%")
-             .bold()
-             .padding(4)
-             .background(Capsule(style: .circular).fill(isDarkMode ? Color(colorComponent) : Color.white))
-             }
-             */
-        }
-    }
-  
-
+                // MARK: - RIGHELLO
+                    HStack {
+                        ruler
+                    }
+                    // MARK: - SLIDER
+                HStack {
+                    Slider(value: sliderValueBinding, in: arc, step: istep)
+                        .accentColor(Color(colorComponent))
+                }
+                // MARK: - INCIDENZA
+            HStack {
+                Text("Incidenza")
+                    .foregroundColor(Color(colorComponent))
+                Spacer()
+                Text("\(sliderValue * 100, specifier: "%.0f")%")
+                    .bold()
+                    .padding(4)
+                    .background(Capsule(style: .circular).fill(isDarkMode ? Color(colorComponent) : Color.white))
+                }
+                // END OF HSTACK
+            } // END OF VSTACK
+        } // END OF VSTACK
+    } // END OF BODY
     
     // MARK: - QUALITY INDICATOR VIEW
-    
     var qualityIndicators: some View {
         
         HStack {
@@ -71,15 +59,15 @@ struct SliderProvaComponentView: View {
                 VStack {
                     Text("Scarso")
                         .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(.pink)
+                        .foregroundColor(.pink)
                     cerchietto
                 }
             }
             else {
                 VStack {
                     Text("Scarso")
-                        .font(.system(size: 12))
-                    .foregroundColor(Color(.quaternaryLabel))
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundColor(Color(.quaternaryLabel))
                     cerchietto
                 }
             }
@@ -90,18 +78,18 @@ struct SliderProvaComponentView: View {
                 VStack {
                     Text("Mediocre")
                         .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(.pink)
+                        .foregroundColor(.pink)
                     cerchietto
                 }
             }
-                else {
-                    VStack {
-                        Text("Mediocre")
-                            .font(.system(size: 12))
+            else {
+                VStack {
+                    Text("Mediocre")
+                        .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                        cerchietto
-                    }
+                    cerchietto
                 }
+            }
             
             Spacer()
             
@@ -109,18 +97,18 @@ struct SliderProvaComponentView: View {
                 VStack {
                     Text("Ordinario")
                         .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(.pink)
+                        .foregroundColor(.pink)
                     cerchietto
                 }
             }
-                else {
-                    VStack {
-                        Text("Ordinario")
-                            .font(.system(size: 12))
+            else {
+                VStack {
+                    Text("Ordinario")
+                        .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                        cerchietto
-                    }
+                    cerchietto
                 }
+            }
             
             Spacer()
             
@@ -132,14 +120,14 @@ struct SliderProvaComponentView: View {
                     cerchietto
                 }
             }
-                else {
-                    VStack {
-                        Text("Discreto")
-                            .font(.system(size: 12))
+            else {
+                VStack {
+                    Text("Discreto")
+                        .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                        cerchietto
-                    }
+                    cerchietto
                 }
+            }
             
             Spacer()
             
@@ -147,31 +135,47 @@ struct SliderProvaComponentView: View {
                 VStack{
                     Text("Buono")
                         .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(.pink)
+                        .foregroundColor(.pink)
                     cerchietto
                 }
             }
-                else {
-                    VStack {
-                        Text("Buono")
-                            .font(.system(size: 12))
+            else {
+                VStack {
+                    Text("Buono")
+                        .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                        cerchietto
-                    }
+                    cerchietto
                 }
             }
-        } // Finish Quality Indicator View
-     
+        }
         
+    } // END OF Quality Indicator View
+}
     // MARK: - CIRCLE VIEW
     var cerchietto: some View {
             Image(systemName: "circle.fill")
                 .resizable()
                 .frame(width: 4, height: 4)
                 .foregroundColor(.gray)
+    } //END OF CIRCLE VIEW
+
+// MARK: - RULER VIEW
+var ruler: some View {
+    HStack {
+        ForEach (0...13, id:\.self) { _ in
+                    Rectangle()
+                                .fill(Color(.gray))
+                                .frame(width: 1, height: 10)
+            Spacer()
+                    }
+        
+        Rectangle()
+                    .fill(Color(.gray))
+                    .frame(width: 1, height: 10)
     }
-    // finish circle view
-}
+   
+            }// END RULER VIEW
+
 
 
  struct SliderProvaComponentView_Previews: PreviewProvider {
