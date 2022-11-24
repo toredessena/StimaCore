@@ -39,7 +39,7 @@ struct ConservationValueView: View {
                 List {
                     
                     // MARK: - MURATURE PROVA
-                    Section(header: Text("Murature")) {
+                    Section(header: Text("Qualità delle murature")) {
                             SliderProvaComponentView(
                             sliderValueBinding: $item.structValue,
                             arc: -0.50...0.50,
@@ -67,7 +67,7 @@ struct ConservationValueView: View {
                      */
                 
                 // MARK: - SOLAI
-                Section(header: Text("Solai")) {
+                Section(header: Text("Qualità dei solai")) {
                     SliderConservationComponent(
                    
                     sliderValueBinding: $item.roofValue,
@@ -90,7 +90,7 @@ struct ConservationValueView: View {
                     qualityDescriptionText: "Qualità degli infissi")
                     } //: SECTION
                 // MARK: - INTONACI
-                Section(header: Text("Intonaci e tinte")) {
+                Section(header: Text("Qualità di intonaci e tinte")) {
                     SliderConservationComponent(
                   
                     sliderValueBinding: $item.plastersValue,
@@ -102,7 +102,7 @@ struct ConservationValueView: View {
                     } //: SECTION
 
                 // MARK: - IMPIANTI
-                Section(header: Text("Impianti")) {
+                Section(header: Text("Qualità degli impianti")) {
                     SliderConservationComponent(
                 
                     sliderValueBinding: $item.installationsValue,
@@ -114,7 +114,7 @@ struct ConservationValueView: View {
                     } //: SECTION
 
                 // MARK: - Pavimenti e rivestimenti
-                Section(header: Text("Pavimenti e rivestimenti")) {
+                Section(header: Text("Qualità di pavimenti e rivestimenti")) {
                     SliderConservationComponent(
                    
                     sliderValueBinding: $item.floorsValue,
