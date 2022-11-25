@@ -67,6 +67,7 @@ struct StartValueView: View {
                         .foregroundColor(Color("ColorPinkMedium"))
                         .padding(.top, 8)
                 }
+                .padding()
         } //: VSTACK
         } //: VSTACK TITOLO SHEET
         

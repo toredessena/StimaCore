@@ -33,99 +33,76 @@ struct ConservationValueView: View {
                             })
                                 .padding(.bottom, 20)
                             Spacer()
-                        } //: VSTACK DISMISS BUTTON
+                        } //: VSTACK
                     )
-    
+                // END OF  DISMISS BUTTON
+                
+           // MARK: - LIST OF COMPONENTS
                 List {
-                    
-                    // MARK: - MURATURE PROVA
+                    // MARK: - MURATURE
                     Section(header: Text("Qualità delle murature")) {
-                            SliderProvaComponentView(
+                            SliderNewComponentView(
                             sliderValueBinding: $item.structValue,
                             arc: -0.50...0.50,
                             istep: 0.05,
                             sliderValue: item.structValue,
-                            colorComponent: "ColorPinkBright"
-                           )
-                       
+                            colorComponent: "ColorPinkBright")
                     }
-                    //: SECTION
+                    //: END OF SECTION MURATURE
                     
-                // MARK: - MURATURE
-                    /*
-                Section(header: Text("Murature")) {
-                        SliderConservationComponent(
-                        
-                        sliderValueBinding: $item.structValue,
-                        arc: -0.20...0.20,
-                        istep: 0.10,
-                        sliderValue: item.structValue,
-                        colorComponent: "ColorPinkBright",
-                        qualityDescriptionText: "Qualità delle murature")
-                    
-                } //: SECTION
-                     */
-                
                 // MARK: - SOLAI
                 Section(header: Text("Qualità dei solai")) {
-                    SliderConservationComponent(
-                   
+                    SliderNewComponentView (
                     sliderValueBinding: $item.roofValue,
-                    arc: -0.20...0.20,
-                    istep: 0.10,
+                    arc: -0.50...0.50,
+                    istep: 0.05,
                     sliderValue: item.roofValue,
-                    colorComponent: "ColorPinkBright",
-                    qualityDescriptionText: "Qualità dei solai")
+                    colorComponent: "ColorPinkBright")
                     } //: SECTION
                     
                 // MARK: - INFISSI
-                Section(header: Text("Infissi")) {
-                    SliderConservationComponent(
-                 
+                Section(header: Text("Qualità degli infissi")) {
+                    SliderNewComponentView(
                     sliderValueBinding: $item.windowsValue,
-                    arc: -0.20...0.20,
-                    istep: 0.10,
+                    arc: -0.50...0.50,
+                    istep: 0.05,
                     sliderValue: item.windowsValue,
-                    colorComponent: "ColorPinkBright",
-                    qualityDescriptionText: "Qualità degli infissi")
-                    } //: SECTION
+                    colorComponent: "ColorPinkBright")
+                    } //: END OF SECTION INFISSI
+                    
                 // MARK: - INTONACI
                 Section(header: Text("Qualità di intonaci e tinte")) {
-                    SliderConservationComponent(
-                  
+                    SliderNewComponentView(
                     sliderValueBinding: $item.plastersValue,
-                    arc: -0.20...0.20,
-                    istep: 0.10,
+                    arc: -0.50...0.50,
+                    istep: 0.05,
                     sliderValue: item.plastersValue,
-                    colorComponent: "ColorPinkBright",
-                    qualityDescriptionText: "Qualità degli intonaci")
+                    colorComponent: "ColorPinkBright")
                     } //: SECTION
 
                 // MARK: - IMPIANTI
                 Section(header: Text("Qualità degli impianti")) {
-                    SliderConservationComponent(
-                
+                    SliderNewComponentView(
                     sliderValueBinding: $item.installationsValue,
-                    arc: -0.20...0.20,
-                    istep: 0.10,
+                    arc: -0.50...0.50,
+                    istep: 0.05,
                     sliderValue: item.installationsValue,
-                    colorComponent: "ColorPinkBright",
-                    qualityDescriptionText: "Qualità degli impianti")
+                    colorComponent: "ColorPinkBright")
                     } //: SECTION
 
                 // MARK: - Pavimenti e rivestimenti
                 Section(header: Text("Qualità di pavimenti e rivestimenti")) {
-                    SliderConservationComponent(
-                   
+                    SliderNewComponentView(
                     sliderValueBinding: $item.floorsValue,
-                    arc: -0.20...0.20,
-                    istep: 0.10,
+                    arc: -0.50...0.50,
+                    istep: 0.05,
                     sliderValue: item.floorsValue,
-                    colorComponent: "ColorPinkBright",
-                    qualityDescriptionText: "Qualità dei rivestimenti")
+                    colorComponent: "ColorPinkBright")
                     } //: SECTION
                 }
+                // END OF LIST OF COMPONENTS
                 
+                // MARK: - REPORT OF COMPONENTS
                 VStack {
                     Text("Valore di Conservazione".uppercased())
                         .font(.system(size: 16, weight: .bold))
@@ -137,6 +114,8 @@ struct ConservationValueView: View {
                         .foregroundColor(Color("ColorPinkBright"))
                         .padding(.top, 10)
                 }
+                .padding()
+                // END OF VSTACK REPORT OF COMPONENTS
             }
         }
         .background(Color("ColorGrayLight"))

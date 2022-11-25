@@ -99,6 +99,7 @@ struct PositionView: View {
                         .foregroundColor(Color("ColorPinkBright"))
                         .padding(.top, 10)
                     }
+                .padding()
                 }
        
             .background(Color("ColorGrayLight"))

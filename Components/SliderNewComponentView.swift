@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SliderProvaComponentView: View {
+struct SliderNewComponentView: View {
     // MARK: - PROPERTIES
     
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
@@ -27,18 +27,37 @@ struct SliderProvaComponentView: View {
                 HStack {
                     qualityIndicators
                 }
+                // END OF QUALITY INDICATORS
+                
+                // MARK: - CERCHIETTI
+                HStack {
+                    ForEach (0...3, id:\.self) { _ in
+                                cerchietto
+                        Spacer()
+                                }
+                    
+                    cerchietto
+                }
+                .padding(.leading, 13)
+                .padding(.trailing, 13)
+                // END OF CERCHIETTI
+                
                 // MARK: - RIGHELLO
                     HStack {
                         ruler
                     }
+                // End of ruler
+                
                     // MARK: - SLIDER
                 HStack {
                     Slider(value: sliderValueBinding, in: arc, step: istep)
                         .accentColor(Color(colorComponent))
                 }
+                //End of Slider
+                
                 // MARK: - INCIDENZA
             HStack {
-                Text("Incidenza")
+                Text("Incidenza del parametro sul componente")
                     .foregroundColor(Color(colorComponent))
                 Spacer()
                 Text("\(sliderValue * 100, specifier: "%.0f")%")
@@ -57,18 +76,16 @@ struct SliderProvaComponentView: View {
         HStack {
             if sliderValue == -0.50 {
                 VStack {
-                    Text("Scarso")
+                    Text("Scarsa")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(.pink)
-                    cerchietto
                 }
             }
             else {
                 VStack {
-                    Text("Scarso")
+                    Text("Scarsa")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                    cerchietto
                 }
             }
             
@@ -79,7 +96,6 @@ struct SliderProvaComponentView: View {
                     Text("Mediocre")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(.pink)
-                    cerchietto
                 }
             }
             else {
@@ -87,7 +103,6 @@ struct SliderProvaComponentView: View {
                     Text("Mediocre")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                    cerchietto
                 }
             }
             
@@ -95,18 +110,16 @@ struct SliderProvaComponentView: View {
             
             if sliderValue == 0.00 {
                 VStack {
-                    Text("Ordinario")
+                    Text("Ordinaria")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(.pink)
-                    cerchietto
                 }
             }
             else {
                 VStack {
-                    Text("Ordinario")
+                    Text("Ordinaria")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                    cerchietto
                 }
             }
             
@@ -114,18 +127,16 @@ struct SliderProvaComponentView: View {
             
             if sliderValue == 0.25 {
                 VStack {
-                    Text("Discreto")
+                    Text("Discreta")
                         .foregroundColor(.pink)
                         .font(.system(size: 12, weight: .bold))
-                    cerchietto
                 }
             }
             else {
                 VStack {
-                    Text("Discreto")
+                    Text("Discreta")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                    cerchietto
                 }
             }
             
@@ -133,23 +144,21 @@ struct SliderProvaComponentView: View {
             
             if sliderValue == 0.50 {
                 VStack{
-                    Text("Buono")
+                    Text("Buona")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(.pink)
-                    cerchietto
                 }
             }
             else {
                 VStack {
-                    Text("Buono")
+                    Text("Buona")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(.quaternaryLabel))
-                    cerchietto
                 }
             }
         }
-        
-    } // END OF Quality Indicator View
+    }
+    // END OF Quality Indicator View
 }
     // MARK: - CIRCLE VIEW
     var cerchietto: some View {
@@ -182,7 +191,7 @@ var ruler: some View {
 
  struct SliderProvaComponentView_Previews: PreviewProvider {
      static var previews: some View {
-         SliderProvaComponentView(sliderValueBinding: .constant(-0.20), arc: -0.40...0.40, istep: 0.02, sliderValue: 0.20, colorComponent: "ColorPinkBright")
+         SliderNewComponentView(sliderValueBinding: .constant(-0.20), arc: -0.40...0.40, istep: 0.02, sliderValue: 0.20, colorComponent: "ColorPinkBright")
      }
  }
  

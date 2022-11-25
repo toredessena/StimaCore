@@ -30,7 +30,7 @@
 		8E8E4E2127C94D5C0081CA5A /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E4E2027C94D5C0081CA5A /* PositionView.swift */; };
 		8E9025C727EC5ADB009E4BBD /* BarrierBadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9025C627EC5ADB009E4BBD /* BarrierBadgeComponent.swift */; };
 		8E9025C927EC5DD3009E4BBD /* SliderBarrierComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9025C827EC5DD3009E4BBD /* SliderBarrierComponent.swift */; };
-		8EA0889F292240480022A323 /* SliderProvaComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0889E292240480022A323 /* SliderProvaComponentView.swift */; };
+		8EA0889F292240480022A323 /* SliderNewComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0889E292240480022A323 /* SliderNewComponentView.swift */; };
 		8EA352D227DCA7E400CD8BDD /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA352D127DCA7E400CD8BDD /* ControlsView.swift */; };
 		8EA769D628005051000A55E9 /* ReportViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA769D528005050000A55E9 /* ReportViewTwo.swift */; };
 		8EA769D82800508A000A55E9 /* ImporterTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA769D728005089000A55E9 /* ImporterTwo.swift */; };
@@ -79,7 +79,7 @@
 		8E8E4E2027C94D5C0081CA5A /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
 		8E9025C627EC5ADB009E4BBD /* BarrierBadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierBadgeComponent.swift; sourceTree = "<group>"; };
 		8E9025C827EC5DD3009E4BBD /* SliderBarrierComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBarrierComponent.swift; sourceTree = "<group>"; };
-		8EA0889E292240480022A323 /* SliderProvaComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderProvaComponentView.swift; sourceTree = "<group>"; };
+		8EA0889E292240480022A323 /* SliderNewComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderNewComponentView.swift; sourceTree = "<group>"; };
 		8EA352D127DCA7E400CD8BDD /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		8EA769D528005050000A55E9 /* ReportViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewTwo.swift; sourceTree = "<group>"; };
 		8EA769D728005089000A55E9 /* ImporterTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImporterTwo.swift; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				8E1F865827EDF560001CDE2F /* DismissButtonComponent.swift */,
 				8EF15BBB27E24AD600C4B447 /* ButtonComponent.swift */,
 				8EF15BB927E225A400C4B447 /* SliderConservationComponent.swift */,
-				8EA0889E292240480022A323 /* SliderProvaComponentView.swift */,
+				8EA0889E292240480022A323 /* SliderNewComponentView.swift */,
 				8E83CB89288D9543005C0AB9 /* SliderUbicationComponentView.swift */,
 				8E83CB8B288D9A4D005C0AB9 /* SliderExpoComponentView.swift */,
 				8E83CB8D288D9CFF005C0AB9 /* SliderAccessComponentView.swift */,
@@ -354,7 +354,7 @@
 				8E9025C727EC5ADB009E4BBD /* BarrierBadgeComponent.swift in Sources */,
 				8EF15BB827E1D35100C4B447 /* CertificationView.swift in Sources */,
 				8EEE17C627CCEA0F007B4944 /* SoundPlayer.swift in Sources */,
-				8EA0889F292240480022A323 /* SliderProvaComponentView.swift in Sources */,
+				8EA0889F292240480022A323 /* SliderNewComponentView.swift in Sources */,
 				8EEC5CE027DB3D2000FB3057 /* SliderTransformComponentView.swift in Sources */,
 				8E61BCCF27C0E06D002FA3D9 /* StimaCoreApp.swift in Sources */,
 			);
