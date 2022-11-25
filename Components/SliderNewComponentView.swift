@@ -57,7 +57,7 @@ struct SliderNewComponentView: View {
                 
                 // MARK: - INCIDENZA
             HStack {
-                Text("Incidenza del parametro sul componente")
+                Text("Incidenza sul componente")
                     .foregroundColor(Color(colorComponent))
                 Spacer()
                 Text("\(sliderValue * 100, specifier: "%.0f")%")
