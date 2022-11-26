@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E078A3727C779F30087DDC7 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E078A3527C779F30087DDC7 /* Item+CoreDataClass.swift */; };
 		8E078A3827C779F30087DDC7 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E078A3627C779F30087DDC7 /* Item+CoreDataProperties.swift */; };
+		8E17CB2429327C13007C18BF /* PickerUbicationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17CB2329327C13007C18BF /* PickerUbicationComponent.swift */; };
 		8E1F865927EDF560001CDE2F /* DismissButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1F865827EDF560001CDE2F /* DismissButtonComponent.swift */; };
 		8E31170A27DBBBAF0036355C /* StepperComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31170927DBBBAF0036355C /* StepperComponent.swift */; };
 		8E353ED027C1328D0034B2D6 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E353ECF27C1328D0034B2D6 /* HideKeyboardExtension.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		8E078A3527C779F30087DDC7 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8E078A3627C779F30087DDC7 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E17CB2329327C13007C18BF /* PickerUbicationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerUbicationComponent.swift; sourceTree = "<group>"; };
 		8E1F865827EDF560001CDE2F /* DismissButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButtonComponent.swift; sourceTree = "<group>"; };
 		8E31170927DBBBAF0036355C /* StepperComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperComponent.swift; sourceTree = "<group>"; };
 		8E353ECF27C1328D0034B2D6 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				8EF15BB927E225A400C4B447 /* SliderConservationComponent.swift */,
 				8EA0889E292240480022A323 /* SliderNewComponentView.swift */,
 				8E83CB89288D9543005C0AB9 /* SliderUbicationComponentView.swift */,
+				8E17CB2329327C13007C18BF /* PickerUbicationComponent.swift */,
 				8E83CB8B288D9A4D005C0AB9 /* SliderExpoComponentView.swift */,
 				8E83CB8D288D9CFF005C0AB9 /* SliderAccessComponentView.swift */,
 				8EEC5CDF27DB3D2000FB3057 /* SliderTransformComponentView.swift */,
@@ -334,6 +337,7 @@
 				8EA352D227DCA7E400CD8BDD /* ControlsView.swift in Sources */,
 				8E8E4E1F27C93D030081CA5A /* ConservationValueView.swift in Sources */,
 				8EC7C61028BA0808003A2C30 /* CreditsComponentView.swift in Sources */,
+				8E17CB2429327C13007C18BF /* PickerUbicationComponent.swift in Sources */,
 				8E61BCD827C0E06F002FA3D9 /* Persistence.swift in Sources */,
 				8E078A3727C779F30087DDC7 /* Item+CoreDataClass.swift in Sources */,
 				8EA769D82800508A000A55E9 /* ImporterTwo.swift in Sources */,
