@@ -25,7 +25,7 @@ struct SliderBarrierComponent: View {
               switch sliderValue {
 
               case 0.0:
-                  BarrierBadgeComponent(color: "Grigiolino", text: "Nessun intervento")
+                  BarrierBadgeComponent(color: "Grigiolino", text: "Nessuno")
               case 0.5:
                   BarrierBadgeComponent(color: "Senape", text: "Adattabilità")
               case 1.0:
