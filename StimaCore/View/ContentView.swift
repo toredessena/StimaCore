@@ -112,12 +112,12 @@ struct ContentView: View {
                                 playSound(sound: "sound-tap", type: "mp3")
                             }, label: {
                                 Image(systemName: "plus.circle")
-                                    .font(.system(size: 30, weight: .light))
+                                    .font(.system(size: 34, weight: .light))
                                 
                             })
                                 .foregroundColor(.white)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 10)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 8)
                                 .background(Color("ColorPinkBright"))
                                 .clipShape(Capsule())
                                 .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
@@ -149,6 +149,7 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
 // MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
