@@ -87,26 +87,6 @@ struct ContentView: View {
                     Spacer(minLength: 10)
                     //:     END OF HEADER
                     
-                    // MARK: - NEW TASK BUTTON
-                    VStack {
-                        Button(action: {
-                            showNewTaskItem = true
-                            playSound(sound: "sound-tap", type: "mp3")
-                        }, label: {
-                            Image(systemName: "plus.circle")
-                                .font(.system(size: 30, weight: .light))
-                            
-                        })
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 10)
-                            .background(Color("ColorPinkBright"))
-                            .clipShape(Capsule())
-                            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
-                    }
-                    .padding(.bottom, 10)
-                    
-                    
                     // MARK: - LIST OF ITEMS
                     List {
                         ForEach(items) { item in
@@ -122,6 +102,29 @@ struct ContentView: View {
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.08), radius: 14)
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
+                    
+                    // MARK: - NEW TASK BUTTON
+                    VStack {
+                       
+                        VStack {
+                            Button(action: {
+                                showNewTaskItem = true
+                                playSound(sound: "sound-tap", type: "mp3")
+                            }, label: {
+                                Image(systemName: "plus.circle")
+                                    .font(.system(size: 30, weight: .light))
+                                
+                            })
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 10)
+                                .background(Color("ColorPinkBright"))
+                                .clipShape(Capsule())
+                                .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
+                        }
+                        .padding(.bottom, 10)
+                        
+                    }
                 } //: VSTACK
                 
                 // MARK: - NEW TASK ITEM
