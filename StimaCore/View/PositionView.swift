@@ -41,6 +41,7 @@ struct PositionView: View {
                 
             List {
                 // MARK: -  UBICAZIONE
+                /*
                 Section(header: Text("Ubicazione")) {
                     SliderUbicationComponentView(
                         sliderValueBinding: $item.ubicazioneValue,
@@ -51,6 +52,10 @@ struct PositionView: View {
                         qualityDescriptionText: "Tipo:"
                     )
                 }
+                 */
+                
+                // MARK: - PROVA PICKER
+                PickerUbicationComponent(item: item)
                   
                     // MARK: -  ESPOSIZIONE
                     Section(header: Text("Esposizione")) {
@@ -118,5 +123,3 @@ struct PositionView: View {
  }
   
  */
-
- 
