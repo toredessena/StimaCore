@@ -15,8 +15,6 @@ struct PositionView: View {
     @Environment(\.managedObjectContext) var viewContext
     @ObservedObject var item: Item
     
-    @State var sliderValue: Double = 0.00
-    
     // MARK: - BODY
     var body: some View {
         VStack {
@@ -56,7 +54,7 @@ struct PositionView: View {
                  */
                 
                 // MARK: - PROVA PICKER
-                Section(header: Text("askdcjhgdjh")) {
+                Section(header: Text("Ubicazione")) {
                     Picker("seleziona", selection: $item.ubicazioneValue ) {
                         Text("zone E").tag(-0.20)
                         Text("zone C").tag(-0.10)
@@ -64,12 +62,12 @@ struct PositionView: View {
                         Text("zone A").tag(0.10)
                         Text("zone F").tag(0.20)
                     }.pickerStyle(.segmented)
-                    Text("\(item.ubicazioneValue * 100, specifier: "%.0f")")
-                    
+                    Text("\(item.ubicazioneValue * 100, specifier: "%.0f")%")
+                        .bold()
                 }
                   
                     // MARK: -  ESPOSIZIONE
-                   /*
+                   
                 Section(header: Text("Esposizione")) {
                         SliderExpoComponentView(
                             sliderValueBinding: $item.esposizioneValue,
@@ -80,7 +78,7 @@ struct PositionView: View {
                             qualityDescriptionText: "Tipo:"
                         )
                     }
-                    */
+                    
                 // MARK: - Accessibilità
                         Section(header: Text("Accessibilità")) {
                             SliderAccessComponentView(
