@@ -62,8 +62,29 @@ struct PositionView: View {
                         Text("zone A").tag(0.10)
                         Text("zone F").tag(0.20)
                     }.pickerStyle(.segmented)
-                    Text("\(item.ubicazioneValue * 100, specifier: "%.0f")%")
-                        .bold()
+                    
+                    VStack {
+                        HStack {
+                                Text("Incidenza:")
+                                Spacer()
+                                Text("\(item.ubicazioneValue * 100, specifier: "%.0f")%")
+                                                   .bold()
+                                }
+                        Spacer(minLength: 4)
+                        HStack {
+                            Text("Tipologia:")
+                            Spacer()
+                            switch item.ubicazioneValue {
+                            case -0.20:
+                            Text("minc")
+                            default:
+                            Text("No")
+                            }
+                        }
+                           
+                    }
+                    .padding(.vertical, 8)
+                   
                 }
                   
                     // MARK: -  ESPOSIZIONE
