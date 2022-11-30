@@ -56,11 +56,11 @@ struct PositionView: View {
                 // MARK: - PROVA PICKER
                 Section(header: Text("Ubicazione")) {
                     Picker("seleziona", selection: $item.ubicazioneValue ) {
-                        Text("zone E").tag(-0.20)
-                        Text("zone C").tag(-0.10)
-                        Text("zone B").tag(0.00)
-                        Text("zone A").tag(0.10)
-                        Text("zone F").tag(0.20)
+                        Text("E").tag(-0.20)
+                        Text("C").tag(-0.10)
+                        Text("C-B").tag(0.00)
+                        Text("B").tag(0.10)
+                        Text("A-F").tag(0.20)
                     }.pickerStyle(.segmented)
                     
                     VStack {
@@ -76,7 +76,15 @@ struct PositionView: View {
                             Spacer()
                             switch item.ubicazioneValue {
                             case -0.20:
-                            Text("minc")
+                            Text("Aree non urbanizzate")
+                            case -0.10:
+                            Text("Espansioni incomplete")
+                            case 0.00:
+                            Text("Espansioni urbanizzate")
+                            case 0.10:
+                            Text("Aree di completamento")
+                            case 0.20:
+                            Text("Aree di pregio")
                             default:
                             Text("No")
                             }
