@@ -66,6 +66,7 @@ struct PositionView: View {
                     VStack {
                         HStack {
                                 Text("Incidenza:")
+                                .foregroundColor(Color("ColorPinkBright"))
                                 Spacer()
                                 Text("\(item.ubicazioneValue * 100, specifier: "%.0f")%")
                                                    .bold()
@@ -73,6 +74,7 @@ struct PositionView: View {
                         Spacer(minLength: 4)
                         HStack {
                             Text("Tipologia:")
+                                .foregroundColor(Color("ColorPinkBright"))
                             Spacer()
                             switch item.ubicazioneValue {
                             case -0.20:
