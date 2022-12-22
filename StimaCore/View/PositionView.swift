@@ -56,11 +56,11 @@ struct PositionView: View {
                 // MARK: - PROVA PICKER
                 Section(header: Text("Ubicazione")) {
                     Picker("", selection: $item.ubicazioneValue ) {
-                        Image(systemName: "e.circle").tag(-0.20)
-                        Image(systemName: "c.circle").tag(-0.10)
+                        Image(systemName: "e.circle").tag(-0.10)
+                        Image(systemName: "c.circle").tag(-0.05)
                         Image(systemName: "b.circle").tag(0.00)
-                        Image(systemName: "a.circle").tag(0.10)
-                        Image(systemName: "f.circle").tag(0.20)
+                        Image(systemName: "a.circle").tag(0.05)
+                        Image(systemName: "f.circle").tag(0.10)
                     }.pickerStyle(.segmented)
                        
                     VStack {
@@ -77,13 +77,13 @@ struct PositionView: View {
                                 .foregroundColor(Color("ColorPinkBright"))
                             Spacer()
                             switch item.ubicazioneValue {
-                            case -0.20:
+                            case -0.10:
                             Text("Aree agricole, non urbanizzate, al di fuori dei centri abitati")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
                                     .lineLimit(3)
-                            case -0.10:
+                            case -0.05:
                                 Text("Espansioni recenti, contigue al nucleo urbano consolidato")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
@@ -95,13 +95,13 @@ struct PositionView: View {
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
-                            case 0.10:
+                            case 0.05:
                                 Text("Aree di pregio in contesti residenziali storici")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
-                            case 0.20:
+                            case 0.10:
                             Text("Contesti di lusso in aree turistiche di pregio")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
@@ -133,11 +133,11 @@ struct PositionView: View {
                 // MARK: PROVA ESPOSIZIONE
                 Section(header: Text("Esposizione")) {
                     Picker("", selection: $item.esposizioneValue ) {
-                        Image(systemName: "moonphase.new.moon").tag(-0.20)
-                        Image(systemName: "moonphase.waning.crescent").tag(-0.10)
+                        Image(systemName: "moonphase.new.moon").tag(-0.10)
+                        Image(systemName: "moonphase.waning.crescent").tag(-0.05)
                         Image(systemName: "moonphase.last.quarter").tag(0.00)
-                        Image(systemName: "moonphase.waxing.crescent.inverse").tag(0.10)
-                        Image(systemName: "moonphase.full.moon").tag(0.20)
+                        Image(systemName: "moonphase.waxing.crescent.inverse").tag(0.05)
+                        Image(systemName: "moonphase.full.moon").tag(0.10)
                     }.pickerStyle(.segmented)
                        
                     VStack {
@@ -154,32 +154,32 @@ struct PositionView: View {
                                 .foregroundColor(Color("ColorPinkBright"))
                             Spacer()
                             switch item.esposizioneValue {
-                            case -0.20:
-                            Text("Livello 0")
+                            case -0.10:
+                            Text("Livello scarso: insolazione insufficiente con ambienti eccessivamente esposti ai venti freddi")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
                                     .lineLimit(3)
-                            case -0.10:
-                                Text("Livello 1")
+                            case -0.05:
+                                Text("Livello mediocre: insolazione non ottimale e moderata riparazione nei confronti dei venti dominanti")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.00:
-                                Text("Livello 2")
+                                Text("Livello sufficiente: ambienti abbastanza soleggiati e riparati")
+                                        .font(.system(size: 12, weight: .bold))
+                                        .foregroundColor(.gray)
+                                        .multilineTextAlignment(.trailing)
+                                        .lineLimit(3)
+                            case 0.05:
+                                Text("Livello discreto: ")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.10:
-                                Text("Livello 3")
-                                        .font(.system(size: 12, weight: .bold))
-                                        .foregroundColor(.gray)
-                                        .multilineTextAlignment(.trailing)
-                                        .lineLimit(3)
-                            case 0.20:
-                            Text("Livello 4")
+                            Text("Livello buono: ")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
