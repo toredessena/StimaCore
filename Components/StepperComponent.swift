@@ -26,7 +26,7 @@ struct StepperComponent: View {
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading)  {
             Text(surfaceIndication)
             .lineLimit(1)
             .foregroundColor(Color(colorSelection))
