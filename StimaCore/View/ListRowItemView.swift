@@ -18,15 +18,15 @@ struct ListRowItemView: View {
                 // TITOLO STIMA
                 Text(item.title?.uppercased() ?? "")
                     .font(.system(.headline))
-                    .fontWeight(.light)
+                    .fontWeight(.heavy)
                     .foregroundColor(item.completion ? Color.pink : Color.primary)
-                    .padding(.top, 8)
+                    .padding(.top, 4)
                     .padding(.leading, 8)
                 
                   // VALORE STIMA
                 Text("€. \(item.valoreFinale, specifier: "%.2f")")
                     .font(.system(.headline))
-                    .fontWeight(.bold)
+                    .fontWeight(.regular)
                     .foregroundColor(item.completion ? Color.pink : Color.primary)
                     .padding(.leading, 8)
                 
