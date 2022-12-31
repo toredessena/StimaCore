@@ -161,13 +161,13 @@ struct PositionView: View {
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.05:
-                                Text("Discreta insolazione: ambienti riparati da verande e logge")
+                                Text("Buona esposizione: ambienti riparati da verande e logge")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.10:
-                            Text("Buona insolazione, schermature e logge sui lati nord e ovest")
+                            Text("Esposizione ottimale, schermature e logge sui lati nord e ovest")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
