@@ -78,7 +78,7 @@ struct PositionView: View {
                             Spacer()
                             switch item.ubicazioneValue {
                             case -0.10:
-                            Text("Aree agricole, non urbanizzate, al di fuori dei centri abitati")
+                            Text("Aree agricole, non urbanizzate o al di fuori dei centri abitati")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
@@ -90,7 +90,7 @@ struct PositionView: View {
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.00:
-                                Text("Espansioni e completamenti a ridosso dei centri storici")
+                                Text("Completamenti a ridosso dei centri storici")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
@@ -102,7 +102,7 @@ struct PositionView: View {
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.10:
-                            Text("Contesti di lusso in aree turistiche di pregio")
+                            Text("Contesti di lusso, aree turistiche e di pregio")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
