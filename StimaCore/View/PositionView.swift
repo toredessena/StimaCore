@@ -208,31 +208,31 @@ struct PositionView: View {
                             Spacer()
                             switch item.accessibilitaValue {
                             case -0.10:
-                            Text("Ridotta accessibilità: viabilità angusta, assenza di parcheggi")
+                            Text("Ridotta accessibilità: viabilità problematica, assenza di parcheggi")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
                                     .lineLimit(3)
                             case -0.05:
-                                Text("Accessibilità ridotta: viabilità accettabile con pochi parcheggi")
+                                Text("Accessibilità ridotta: viabilità angusta con pochi parcheggi")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.00:
-                                Text("Accessibilità ordinaria: viabilità ordinaria con parcheggi")
+                                Text("Accessibilità ordinaria: viabilità accettabile con parcheggi")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.05:
-                                Text("Accessibilità discreta: buona dotazione viaria e di parcheggi")
+                                Text("Accessibilità buona: buona dotazione viaria e di parcheggi")
                                         .font(.system(size: 12, weight: .bold))
                                         .foregroundColor(.gray)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(3)
                             case 0.10:
-                            Text("Accessibilità buona: strade ampie e parcheggi abbondanti")
+                            Text("Accessibilità ottimale: strade ampie e parcheggi abbondanti")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.trailing)
@@ -311,6 +311,7 @@ struct PositionView: View {
                
                     } //: LIST
        
+                // MARK: - VALORE OTTENUTO
                 VStack {
                     Text("Valore di Posizione".uppercased())
                         .font(.system(size: 16, weight: .bold))
