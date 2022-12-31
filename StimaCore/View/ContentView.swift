@@ -20,6 +20,9 @@ struct ContentView: View {
     @State private var showNewTaskItem: Bool = false
     @State private var searchText = ""
     
+    //Animation Button
+    @State private var animationButton: Bool = false
+    
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
@@ -121,6 +124,13 @@ struct ContentView: View {
                                 .background(Color("ColorPinkBright"))
                                 .clipShape(Capsule())
                                 .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 8, x: 0, y: 4.0)
+                                .onAppear {
+                                    withAnimation(.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
+                                        animationButton = true
+                                    }
+                                }
+                                .scaleEffect(self.animationButton ? 1 : 0.9)
+                                .opacity(self.animationButton ? 1 : 0.9)
                         }
                         .padding(.bottom, 10)
                         
