@@ -39,7 +39,7 @@ struct PositionView: View {
                 )
                 
             List {
-                // MARK: -  UBICAZIONE con slider
+                // MARK: -  UBICAZIONE con slider disattivata
                 /*
                 Section(header: Text("Ubicazione")) {
                     SliderUbicationComponentView(
