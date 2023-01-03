@@ -20,7 +20,7 @@ struct SliderConservationComponent: View {
     var colorComponent: String
     var qualityDescriptionText: String
     
-    // var nonsense: Double
+ 
 
     // MARK: - BODY
     
