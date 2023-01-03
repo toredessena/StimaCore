@@ -50,10 +50,10 @@ struct StepperComponent: View {
 }
 
 
-
+/*
 struct StepperComponent_Previews: PreviewProvider {
     static var previews: some View {
         StepperComponent(surfaceIndication: "Intonaci", colorSelection: "ColorPinkBright", range: 0...1000, step: 1.0, stepperBindingValue: .constant(0.00), stepperValue: 0.00, measureIndication: "Mq.")
     }
 }
-
+*/
