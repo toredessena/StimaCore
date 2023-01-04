@@ -20,7 +20,7 @@ struct StepperComponent: View {
     var stepperBindingValue: Binding<Double>
     var stepperValue: Double
     
-    // correggo indicature unità di misura
+    // correggo indicatore unità di misura
     var measureIndication: String
     
     

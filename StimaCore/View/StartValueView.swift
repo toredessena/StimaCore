@@ -51,7 +51,7 @@ struct StartValueView: View {
             }
                 Section(header: Text("Costo al Mq.")) {
                     
-                    StepperComponent( surfaceIndication: "Valore di mercato per:  \(item.comune ?? "-")", colorSelection: "ColorPinkBright", range: 0...10000, step: 50, stepperBindingValue: $item.costoMq, stepperValue: item.costoMq, measureIndication: "€/mq.")
+                    StepperComponent( surfaceIndication: "Valore di mercato al mq. per  \(item.comune ?? "-")", colorSelection: "ColorPinkBright", range: 0...10000, step: 50, stepperBindingValue: $item.costoMq, stepperValue: item.costoMq, measureIndication: "€/mq.")
             }
         }
             .padding(.top, 10)
